@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Hello world"
-
 which go
 
 echo "Arguments : ${INPUT_HELLO}"
@@ -10,4 +8,9 @@ pwd
 
 go get github.com/fsnotify/fsnotify@v1.4.7
 
-go build
+export GOOS="windows"
+export GOARCH="amd64"
+
+go build 
+
+ls
