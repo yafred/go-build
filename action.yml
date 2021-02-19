@@ -1,0 +1,15 @@
+name: 'go-build'
+description: 'Launch a go build'
+author: 'YaFred'
+branding:
+  icon: save
+  color: black
+inputs:
+  hello:
+    description: 'place holder'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+      - ${{ inputs.hello }}
