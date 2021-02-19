@@ -5,3 +5,7 @@ echo "Hello world"
 which go
 
 echo "Arguments : ${INPUT_HELLO}"
+
+pwd
+
+go build
