@@ -5,9 +5,9 @@ branding:
   icon: save
   color: black
 inputs:
-  hello:
-    description: 'place holder'
-    required: false
+  name:
+    description: 'name of the executable that must be produced'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
