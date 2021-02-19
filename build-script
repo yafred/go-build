@@ -2,7 +2,7 @@
 
 which go
 
-echo "Arguments : ${INPUT_HELLO}"
+echo "Output program name: ${INPUT_NAME}"
 
 pwd
 
@@ -11,6 +11,6 @@ go get github.com/fsnotify/fsnotify@v1.4.7
 export GOOS="windows"
 export GOARCH="amd64"
 
-go build 
+go build -o "dist/${INPUT_NAME}-${GOOS}-${GOARCH}.exe"
 
-ls
+ls dist
