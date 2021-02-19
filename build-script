@@ -8,9 +8,20 @@ pwd
 
 go get github.com/fsnotify/fsnotify@v1.4.7
 
+# Build for Windows amd64
 export GOOS="windows"
 export GOARCH="amd64"
-
 go build -o "dist/${INPUT_NAME}-${GOOS}-${GOARCH}.exe"
+
+# Build for darwin amd64
+export GOOS="darwin"
+export GOARCH="amd64"
+go build -o "dist/${INPUT_NAME}-${GOOS}-${GOARCH}"
+
+# Build for linux amd64
+export GOOS="linux"
+export GOARCH="amd64"
+go build -o "dist/${INPUT_NAME}-${GOOS}-${GOARCH}"
+
 
 ls dist
