@@ -19,24 +19,20 @@ echo $gitRepository
 echo $gitCommit
 echo $gitTag
 
-# ldflags
-ldflags="-X github.com/yafred/chess-explorer/internal/version.BuildTime='${buildTime}' -X github.com/yafred/chess-explorer/internal/version.GitRepository='${gitRepository}' -X github.com/yafred/chess-explorer/internal/version.GitCommit='${gitCommit}' -X github.com/yafred/chess-explorer/internal/version.GitTag='${gitTag}'"
-echo $ldflags
-
 # Build for Windows amd64
 export GOOS="windows"
 export GOARCH="amd64"
-go build -ldflags="${ldflags}" -o "dist/${INPUT_NAME}-${GOOS}-${GOARCH}.exe"
+go build -ldflags="-X github.com/yafred/chess-explorer/internal/version.BuildTime='${buildTime}' -X github.com/yafred/chess-explorer/internal/version.GitRepository='${gitRepository}' -X github.com/yafred/chess-explorer/internal/version.GitCommit='${gitCommit}' -X github.com/yafred/chess-explorer/internal/version.GitTag='${gitTag}'" -o "dist/${INPUT_NAME}-${GOOS}-${GOARCH}.exe"
 
 # Build for darwin amd64
 export GOOS="darwin"
 export GOARCH="amd64"
-go build -ldflags=$ldflags -o "dist/${INPUT_NAME}-${GOOS}-${GOARCH}"
+go build -ldflags="-X github.com/yafred/chess-explorer/internal/version.BuildTime='${buildTime}' -X github.com/yafred/chess-explorer/internal/version.GitRepository='${gitRepository}' -X github.com/yafred/chess-explorer/internal/version.GitCommit='${gitCommit}' -X github.com/yafred/chess-explorer/internal/version.GitTag='${gitTag}'" -o "dist/${INPUT_NAME}-${GOOS}-${GOARCH}"
 
 # Build for linux amd64
 export GOOS="linux"
 export GOARCH="amd64"
-go build -ldflags=$ldflags -o "dist/${INPUT_NAME}-${GOOS}-${GOARCH}"
+go build -ldflags="-X github.com/yafred/chess-explorer/internal/version.BuildTime='${buildTime}' -X github.com/yafred/chess-explorer/internal/version.GitRepository='${gitRepository}' -X github.com/yafred/chess-explorer/internal/version.GitCommit='${gitCommit}' -X github.com/yafred/chess-explorer/internal/version.GitTag='${gitTag}'" -o "dist/${INPUT_NAME}-${GOOS}-${GOARCH}"
 
 
 ls dist
