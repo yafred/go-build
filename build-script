@@ -8,6 +8,19 @@ pwd
 
 go get github.com/fsnotify/fsnotify@v1.4.7
 
+# Build information
+buildTime=$(date)
+gitRepository=$(git config --get remote.origin.url)
+gitCommit=$(git rev-parse HEAD)
+gitTag=$(git describe --tags)
+
+echo $buildTime
+echo $gitRepository
+echo $gitCommit
+echo $gitTag
+
+# go build -ldflags="-X 'github.com/yafred/chess-explorer/internal/version.BuildTime=$buildTime'"
+
 # Build for Windows amd64
 export GOOS="windows"
 export GOARCH="amd64"
