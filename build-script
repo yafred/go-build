@@ -21,6 +21,7 @@ echo $gitTag
 
 # ldflags
 ldflags="-X github.com/yafred/chess-explorer/internal/version.BuildTime='${buildTime}' -X github.com/yafred/chess-explorer/internal/version.GitRepository='${gitRepository}' -X github.com/yafred/chess-explorer/internal/version.GitCommit='${gitCommit}' -X github.com/yafred/chess-explorer/internal/version.GitTag='${gitTag}'"
+echo $ldflags
 
 # Build for Windows amd64
 export GOOS="windows"
